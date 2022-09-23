@@ -27,14 +27,24 @@ int main()
 	cout << tabA[4] << endl;//9*/
 	//cout << tabA[5] << endl;//crash
 	//index out of range < 0 > size()
-	int _example[10];
-
+	//int _example[10];
+	/*
 	for (int i = 0; i < 10 ; i++ )
 	{
 		_example[i] = 100;
 		cout << _example[i] << endl;
 		//do something 
+	}*/
+	bool _canRun = false;
+	for (int i = -10, j=10;i < 10 && _canRun; i++, j+=10)
+	{
+		cout << "i : " << i << endl;
+		cout << "j : " << j << endl;
 	}
 
+	for (float i = 0; i < 100; i += .1f)
+	{
+		cout << "f : " << i << endl;
+	}
 }
 
