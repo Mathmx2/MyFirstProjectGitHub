@@ -23,31 +23,16 @@ void ShowContact()
 	}
 }
 
-void TriAge()
+void RequestAddContact() 
 {
-	for (int i = 0; i < sizeTab; i++)
-	{
+	cout << "voulez vous rajouter un contact ?";
 
-		if (Age[i] > Age[i + 1])
-		{
-			cout << Age[i + 1] << endl;
-			int _Age = Age[i];
-			Age[i] = Age[i + 1];
-			Age[i + 1] = _Age;
-			
-		}
-		else 
-		{
-			cout << i << endl;
-			cout << Age[i] << endl;
-		}
-	}
+
 }
 
 
 int main()
 {
-	//ShowContact();
-	TriAge();
+	ShowContact();
 }
 
