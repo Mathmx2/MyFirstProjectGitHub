@@ -4,103 +4,54 @@
 #include <iostream>
 #include <vector>
 
-class Node
-{
-public:
-    int data;
-    Node* next = nullptr;
-    Node(int _data, Node* _next = nullptr)
-    {
-        data = _data;
-        next = _next;
-    }
-
-};
+template<typename T>
 
 class List
 {
 private:
-    Node* head = nullptr;
-    Node* cursor = nullptr;
+	T* tab = new T[0];
+	int count = 0;
 public:
-
-    void AddFirst(int _data)
-    {
-        if (head == nullptr)
-        {
-            head = new Node(_data);
-        }
-        else
-        {
-            Node* _newNode = new Node(_data, head);
-            head = _newNode;
-        }
-    }
-    void AddLast(int _data)
-    {
-        if (head == nullptr)
-        {
-            head = new Node(_data);
-        }
-        else
-        {
-            while (head != nullptr)
-            {
-                Display();
-            }
-            Node* _newNode = new Node(_data, head);
-            head = _newNode;
-        }
-    }
-
-    void AddAfter(int _data)
-    {
-
-    }
-
-    void Display()
-    {
-        while (head != nullptr)
-        {
-            std::cout << head->data << " ";
-            head = head->next;
-        }
-    }
-    void Clear()
-    {
-        
-    }
+	List(std::initializer_list<T> _tab)
+	{
+		tab = new T[_tab.size()];
+		count = _tab.size();
+		int index = 0;
+		for (T _item : _tab)
+		{
+			tab[index++] = _item;
+		}
+	}
+	void Display()
+	{
+		for (int i = 0; i < count; i++)
+		{
+			std::cout << tab[i] << " ";
+		}
+	}
 };
-
-
+//
+//class Player
+//{
+//public:
+//	void Hello()
+//	{
+//		std::cout << "Hello !" << std::endl;
+//	}
+//	template<typename T>
+//	void Test(T _item)
+//	{
+//		std::cout << _item << std::endl;
+//	}
+//};
 
 int main()
 {
-    List list = List();
-    list.AddFirst(0);
-    list.AddFirst(3);
-    list.AddFirst(1);
-    list.AddLast(4);
-    list.AddLast(10);
+	/*List<bool> _tab = List<bool>{ true, false, true, true, false };
+	_tab.Display();
 
-    list.Display();
-
-
-
-
-
-
-
-
-
-    /*
-    std::vector<int> tab = std::vector<int>();
-    tab.push_back();
-    tab.emplace_back();
-    tab.size();
-    tab.erase(tab.begin()+5);
-    tab[0] = 5;
-    std::cout << tab[0];
-    */
+	Player player;
+	player.Hello();
+	player.Test<float>(0.5f);*/
 }
 
