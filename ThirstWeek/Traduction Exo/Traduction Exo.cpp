@@ -11,8 +11,22 @@
 #include "FileReader.h"
 #include "FileWriter.h"
 #include "FileStream.h"
+#include "TranslateManager.h"
+#include "Language.h"
 int main()
 {
+
+	//setlocale(LC_ALL, "");
+	
+	TranslateManager manager = TranslateManager();
+	Utils::Log(manager.GetMessage("fr", "hello"));
+	Utils::Log(manager.GetMessage("en", "hello"));
+	/*std::string _str = "salut comment vas tu ?";
+	StringUtils::Replace(_str, " ", "");
+	Utils::Log(_str);*/
+
+
+
 	/*FileWriter fileW = FileWriter("C:\\Users\\MARE1001\\Documents\\GitHub\\MyFirstProjectGitHub\\ThirstWeek\\Text.txt");
 	fileW.Write("Benoit");
 	fileW.Write("Gabriel");
@@ -48,7 +62,6 @@ int main()
 
 
 
-
 	/*if (Directory::Exist(Environment::CurrentDirectory()))
 		Utils::Log("exist ! ");
 	Directory::Create(Path::GetPath("C:\\Test"));
@@ -62,4 +75,9 @@ int main()
 	}*/
 
 	/*Directory d =Directory(Environment::CurrentDirectory());*/
+
+
+
+
+
 }
