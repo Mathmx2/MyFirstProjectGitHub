@@ -20,7 +20,9 @@ void AddLastName(string _value);
 void AddFirstName(string _value);
 void SortChoose();
 
-
+/// <summary>
+/// Montre le tableaux contenant les contacts.
+/// </summary>
 void ShowContact()
 {
 	for (size_t i = 0; i < sizeTab;i++)
@@ -28,7 +30,9 @@ void ShowContact()
 		cout << "Nom : " << lastName[i] << " " << "Prenom : " << firstName[i] << " " << "Age : " << age[i] << endl;
 	}
 }
-
+/// <summary>
+/// Ajoute des constact dans la liste avec le nom, prénom et age.
+/// </summary>
 void GetContact()
 {
 	cout << "voulez vous ajouter un contact ? ( yes or no )" << endl;
@@ -53,7 +57,9 @@ void GetContact()
 		yes = false; 
 	}
 }
-
+/// <summary>
+/// Trie l'age par ordre croisant.
+/// </summary>
 void SortAge()
 {
 	int _tmp = 0;
@@ -85,6 +91,9 @@ void SortAge()
 	}
 }
 
+/// <summary>
+/// Permet de savoir si on veux trié l'age par ordre croissant.
+/// </summary>
 void SortChoose()
 {
 	cout << "Voulez vous trier par age dans l'ordre croissant ? (yes or no)\n";
@@ -94,7 +103,10 @@ void SortChoose()
 		SortAge();
 	}
 }
-
+/// <summary>
+/// Permet d'ajouter l'age.
+/// </summary>
+/// <param name="_value">Age du contact</param>
 void AddAge(int _value)
 {
 	int* _tmp = age;
@@ -120,6 +132,9 @@ void AddFirstName(string _value)
 	firstName[sizeTab - 1] = _value;
 }
 
+/// <summary>
+/// delete les tableaux.
+/// </summary>
 void Clear()
 {
 	delete[] firstName;

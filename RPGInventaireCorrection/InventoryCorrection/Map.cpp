@@ -12,7 +12,7 @@ Map::Map(const std::string& _mapName)
 	mapName = _mapName;
 	Init();
 	if (!IsValid()) return;
-	player = new Player(Utils::UserChoise<std::string>("enter your username: "), enter->Position());
+	player = new Player(Utils::UserChoise<std::string>("enter your username: "),this, enter->Position());
 }
 Map::Map(const Map& _copy)
 {
@@ -51,7 +51,10 @@ void Map::Display()
 	const size_t _size = cases.size();
 	for (size_t i = 0; i < _size; i++)
 	{
+
 		if (player->Position()->Equals(cases[i]->Position()))
+			std::cout << MapDataBase::Player;
+		else
 		std::cout << cases[i]->CaseValue();
 	}
 }
@@ -59,4 +62,30 @@ void Map::Display()
 bool Map::IsValid() const
 {
 	return enter != nullptr && exit != nullptr;
+}
+
+Case* Map::GetCaseAtPosition(const Vector2& _position)
+{
+	const size_t _size = cases.size();
+	for (size_t i = 0; i < _size; i++)
+	{
+		if (cases[i]->Position()->Equals(&_position))
+			return cases[i];
+	}
+	return nullptr;
+}
+
+Player* Map::GetPlayer() const
+{
+	return player;
+}
+
+Case* Map::Enter() const
+{
+	return enter;
+}
+
+Case* Map::Exit() const
+{
+	return exit;
 }

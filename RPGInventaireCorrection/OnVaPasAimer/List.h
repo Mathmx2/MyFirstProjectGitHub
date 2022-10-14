@@ -5,6 +5,9 @@ template <typename T>
 class List
 {
 private:
+	Node<T>* head = nullptr;
+	Node<T>* first = nullptr;
+	Node<T>* last = nullptr;
 	T* tab = nullptr;
 	int count = 0;
 public:
@@ -13,7 +16,7 @@ public:
 	~List();
 
 public: 
-	void Add();
+	void Add(const T& _item);
 	void Clear();
 };
 
@@ -26,10 +29,8 @@ List<T>::List()
 template <typename T>
 List<T>::List(std::initializer_list<T> _tab)
 {
-	tab = _tab;
-	tab = new T[0];
-	count = 0;
-	//for ()
+	for ( const T& _item : _tab)
+		Add(_item)
 }
 template<typename T>
 List<T>::~List()
@@ -39,13 +40,16 @@ List<T>::~List()
 
 
 template<typename T>
-void List<T>::Add()
+void List<T>::Add(const T& _item)
 {
-	T _tmp = tab;
-	for (int i = 0; i < count; i++)
+	Node<T>* _newNode = new Node<T>(_item);
+	if (tab[count] == nullptr)
 	{
-
+		head = _newNode;
+		first = _newNode;
+		last = _newNode;
 	}
+
 }
 
 template<typename T>

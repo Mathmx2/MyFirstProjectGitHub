@@ -55,6 +55,9 @@
     <Filter Include="Utils\String">
       <UniqueIdentifier>{b497f4f8-f9c0-441c-bcc6-d39b33403921}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Item\Potion\Damage">
+      <UniqueIdentifier>{9d754ab4-ecf7-403e-9a11-dffae75c22d2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="InventoryCorrection.cpp">
@@ -106,7 +109,10 @@
       <Filter>Map</Filter>
     </ClCompile>
     <ClCompile Include="Map.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="PotionDamage.cpp">
+      <Filter>Item\Potion\Damage</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +163,9 @@
     </ClInclude>
     <ClInclude Include="Map.h">
       <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="PotionDamage.h">
+      <Filter>Item\Potion\Damage</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

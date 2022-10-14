@@ -9,6 +9,8 @@ public:
 	static T Clamp(const T& _value, const T& _min, const T& _max);
 	template <typename T>
 	static T UserChoise(const std::string& _msg);
+
+	static void Log(const std::string& _msg);
 #pragma endregion methods
 };
 
