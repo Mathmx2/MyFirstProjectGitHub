@@ -31,12 +31,12 @@ bool Case::HasMob() const
     return caseValue == MapDataBase::Mob;
 }
 
-bool Case::IsEnter() const
+bool Case::IsEnter() const 
 {
     return caseValue == MapDataBase::Enter;
 }
 
-bool Case::IsExit() const
+bool Case::IsExit() const 
 {
     return caseValue == MapDataBase::Exit;
 }

@@ -2,9 +2,13 @@
 //
 
 #include <iostream>
-
+#include "Array.h"
 int main()
 {
-    std::cout << "Hello World!\n";
+	Array<int> _tab = Array<int>(10);
+	for (int i = 0; i < 10; i++)
+		_tab[i] = i;
+
+	_tab.Resize(4);
 }
 

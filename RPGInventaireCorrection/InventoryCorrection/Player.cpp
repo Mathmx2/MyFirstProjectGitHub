@@ -4,9 +4,11 @@
 #include "Utils.h"
 #include "Case.h"
 #include "Vector2.h"
+#include "Mob.h" // ajout
+
 #pragma region constructor/destructor
-Player::Player(const std::string& _name, Map* _currentMap, Vector2* _position, const float _maxLife, const float _maxMana)
-    : Entity(_name, _currentMap, _position, _maxLife, _maxMana)
+Player::Player(const std::string& _name, Vector2* _position, const float _maxLife, const float _maxMana)
+    : Entity(_name, _position, _maxLife, _maxMana)
 {
     inventory = new Inventory(_name + " Inventory", this);
 }
@@ -57,5 +59,6 @@ void Player::Move()
     Case* _case = GetMap()->GetCaseAtPosition(_position);
     if (_case == nullptr || _case->IsWall()) return;
     Position()->Set(_position);
+    Mob::Move();
 }
 #pragma endregion methods

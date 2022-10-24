@@ -7,5 +7,4 @@ public:
 	static const char Exit = 's';
 	static const char Mob = 'm';
 	static const char Player = 'p';
-
 };

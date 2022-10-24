@@ -10,6 +10,7 @@ private:
 #pragma region constructor
 public:
 	Array() = default;
+	Array(int _count);
 	Array(std::initializer_list<T> _tab);
 	~Array();
 #pragma region constructor
@@ -21,17 +22,27 @@ public:
 	int Count();
 #pragma endregion methods
 #pragma region operator
-	bool operator== (int _index) const
+	T& operator[](int _index);
 #pragma endregion
-
-
 };
 
 template<typename T>
+Array<T>::Array(int _count)
+{
+	count = _count;
+	tab = new T[count];
+}
+template<typename T>
 inline Array<T>::Array(std::initializer_list<T> _tab)
 {
-	tab = new T[0];
-	count = 0;
+	count = tab.size();
+	tab = new T[count];
+	int _index = 0;
+	for (T _index : _tab)
+	{
+		tab[_index] = 0;
+		_index++;
+	}
 }
 
 template<typename T>
@@ -77,4 +88,9 @@ template<typename T>
 inline int Array<T>::Count()
 {
 	return count;
+}
+template<typename T>
+T& Array<T>::operator[](int _index)
+{
+	return tab[_index];
 }
