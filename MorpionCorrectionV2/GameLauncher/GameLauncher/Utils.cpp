@@ -50,6 +50,16 @@ void Utils::LogTitle(const std::string& _title)
     Log(Underline(_msg));
 }
 
+void Utils::LogTitleFrame(const std::string& _title)
+{
+    std::string _ms3(1, '\t');
+    const std::string& _msg2 = "|";
+    const std::string& _msg = "\t" + _msg2 +"\t" + _title + _ms3 + _msg2;
+    Log(Frame(_msg));
+    Log(_msg); 
+    Log(Frame(_msg));
+}
+
 void Utils::LoadingBar(const std::string& _msg)
 {
     float _progress = 0.0f;
@@ -87,6 +97,21 @@ std::string Utils::Underline(const std::string& _str)
     return std::string(_tabCount, '\t') + std::string(_count, '-');
 }
 
+std::string Utils::Frame(const std::string& _str)
+{
+    int _tabCount = 0, _count = 0;
+    for (char _c : _str)
+    {
+        if (_c == '\t')
+        {
+            _tabCount++;
+            continue;
+        }
+        _count++;
+    }
+
+    return std::string(1, '\t') + std::string( 25, '-');
+}
 void Utils::ClearConsole()
 {
     system("cls");
@@ -105,12 +130,12 @@ void Utils::SetCursorPosition(const int _x, const int _y)
 {
     cursorPosition.X = _x;
     cursorPosition.Y = _y;
-    SetCursorPosition(console, cursorPosition);
+    SetConsoleCursorPosition(console, cursorPosition);
 }
 
 int Utils::CinNoBlock()
 {
-    if (kbhit());// => conio.h
+    if (kbhit())// => conio.h
     {
         return getch();
     }

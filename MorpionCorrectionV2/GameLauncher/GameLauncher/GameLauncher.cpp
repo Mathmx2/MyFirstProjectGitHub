@@ -7,9 +7,13 @@
 #include "FlappyBirdGame.h"
 int main()
 {
-	SetConsoleTitle(L"Launcher");
+	/*SetConsoleTitle(L"Launcher");
 	Launcher _launcher = Launcher({
-		new LauncherItem(new MorpionGame(),new FlappyBirdGame())
+		new LauncherItem(new MorpionGame())
 		});
-	_launcher.Open();
+	_launcher.Open();*/
+	FlappyBirdGame _Flappy = FlappyBirdGame();
+	/*_Flappy.DrawBird();
+	_Flappy.DrawBorder();*/
+	_Flappy.DisplayMenu();
 }

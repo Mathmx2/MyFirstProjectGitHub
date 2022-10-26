@@ -1,6 +1,5 @@
 #pragma once
-#include <string>
-#pragma warning(disable: 4996)
+#include "IGame.h"
 
 #define SCREEN_WIDTH 90
 #define SCREEN_HEIGHT 26
@@ -15,6 +14,7 @@ class FlappyBirdGame
 {
 #pragma region f/p
 private:
+	int birdPos = SCREEN_HEIGHT /2;
 	int score = 0;
 	char bird[2][6] = { '/','-','-','o','\\',' ',
 					'|','_','_','_',' ','>' };
@@ -31,9 +31,12 @@ public:
 	virtual void DrawBorder();
 	virtual void DrawBird();
 	virtual void EraseBird();
-	virtual int OnStart();
-	virtual std::string GameNameFlap() const;
-	virtual std::string DescriptionFlap() const;
+	virtual int OnStart() ;
+	virtual void OnUpdate() ;
+	virtual void Pipe();
+	virtual void DisplayMenu() ;
+	virtual std::string GameName() const ;
+	virtual std::string GameDescription() const ;
 
 #pragma endregion
 

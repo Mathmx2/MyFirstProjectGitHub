@@ -72,6 +72,9 @@
     <ClCompile Include="FlappyBirdGame.cpp">
       <Filter>Games\FlappyBird</Filter>
     </ClCompile>
+    <ClCompile Include="FlappyPipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Object.h">
@@ -100,6 +103,9 @@
     </ClInclude>
     <ClInclude Include="FlappyBirdGame.h">
       <Filter>Games\FlappyBird</Filter>
+    </ClInclude>
+    <ClInclude Include="FlappyPipe.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

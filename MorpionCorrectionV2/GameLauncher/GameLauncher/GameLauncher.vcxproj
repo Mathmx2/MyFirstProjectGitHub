@@ -129,6 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="FlappyBirdGame.cpp" />
+    <ClCompile Include="FlappyPipe.cpp" />
     <ClCompile Include="GameLauncher.cpp" />
     <ClCompile Include="Launcher.cpp" />
     <ClCompile Include="LauncherItem.cpp" />
@@ -140,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FlappyBirdGame.h" />
+    <ClInclude Include="FlappyPipe.h" />
     <ClInclude Include="IGame.h" />
     <ClInclude Include="Launcher.h" />
     <ClInclude Include="LauncherItem.h" />
